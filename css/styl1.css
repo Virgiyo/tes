@@ -1,0 +1,136 @@
+/* Set video background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+/* Logo styling */
+.logo img {
+    height: 40px;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+}
+
+.hamburger .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animate hamburger into II */
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(90deg);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(90deg);
+}
+
+/* Navigation menu */
+#nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Hidden off screen */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.5s ease;
+    z-index: 9;
+}
+
+#nav-menu ul {
+    list-style: none;
+    text-align: center;
+}
+
+#nav-menu ul li {
+    margin: 20px 0;
+}
+
+#nav-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+#nav-menu ul li a:hover {
+    color: #3ff558;
+}
+
+/* Show navigation menu when clicked */
+#nav-menu.show {
+    right: 0;
+}
+
+/* Overlay (for background dimming when menu is open) */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 8;
+}
+
+
+/* Style adjustments for desktop */
+@media (min-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+}
+
+
